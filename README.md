@@ -1,27 +1,49 @@
-# MyCRM
+# MyCRM Client
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+Poc for myCRM - Trip Sorter.
+
+This app provide a `mobile-app` and `desktop-app` for an adaptive approach, the web server will be responsible to deliver the right bundle.
+This will enable more flexibility and performance improvenemt on the long run, enabling team development to deliver code only on the needed platform. (example: google maps only on the desktop-app) 
+
+
+## General Implementation
+The app 'fetch' all the deals from the server all in once then build 2 weighted graph based on price(discounted) and time(minutes).
+
+The 2 graphs are available in the store and consumed everytime  user perfom a search.
+Complexity is equals to O(|E| + |V| Log|V|) where E are the edges and V the nodes.
+
+
+Results are deeplinked, means you copy and share the results with others. 
+
 
 ## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`yarn start:mobile`
+`yarn start:dektop`
 
 ## Build
+`yarn build:mobile`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+`yarn build:dektop`
 
-## Running unit tests
+## Bundle analyzer
+`yarn analyze:mobile`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`yarn analyze:dektop`
 
-## Running end-to-end tests
+## Coding Standards
+Reposity is set up with:
+- `commitizen` for standard command messages 
+- `tslint` for standard command messages 
+-  centralized rxjs imports
+- error warning for unsed imports that would increase biundle size
+- ngRx as state managments
+- side effects has to pass from effects classes
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## TODO
+- UTs
+- e2e Tests
+- Server Side Rendering for page load improvements
+- Service Worker for Progressive Web Apps
+- Move Shortest path computation on server side
+- Introduce Graphql to improve page speed and fetch less data
