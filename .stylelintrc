@@ -1,0 +1,27 @@
+{
+  "plugins": [
+    "stylelint-order",
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "max-nesting-depth": 3,
+    "order/properties-alphabetical-order": true,
+    "string-quotes": "single",
+    "selector-pseudo-element-no-unknown": [
+      true,
+      {
+        "ignorePseudoElements": [
+          "ng-deep"
+        ]
+      }
+    ],
+    "selector-type-no-unknown": [
+      true,
+      {
+        "ignoreTypes": [
+          "icon"
+        ]
+      }
+    ]
+  }
+}

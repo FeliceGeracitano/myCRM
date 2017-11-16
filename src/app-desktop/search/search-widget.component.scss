@@ -1,0 +1,19 @@
+@import '../../style/media';
+
+:host {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container {
+  padding: 16px;
+  padding-bottom: 24px;
+  width: 100%;
+
+  @include md {
+    padding: 24px;
+    width: 600px;
+  }
+}

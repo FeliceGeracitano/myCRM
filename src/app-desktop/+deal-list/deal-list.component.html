@@ -1,0 +1,19 @@
+
+<mat-card class="container">
+  <app-map></app-map>
+</mat-card>
+<mat-card class="container" *ngFor="let deal of (list$ | async)">
+  <mat-card-content>
+      <div class="info">Step: {{ deal.departure }} -> {{ deal.arrival }}</div>
+      <div class="transpot">Transport type: {{ deal.transport  }} {{ deal.reference }} For: {{ deal.duration.h }}H{{ deal.duration.m }}</div>
+      <div class="price">Price: {{ deal.finalCost }}</div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="container" *ngIf="(list$ | async)?.length">
+  <mat-card-content>
+      <div class="total">Total Cost: {{ total$ | async }}</div>
+  </mat-card-content>
+</mat-card>
+
+

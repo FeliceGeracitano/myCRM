@@ -5,22 +5,38 @@
   },
   "apps": [
     {
+      "name": "mobile",
       "root": "src",
-      "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "outDir": "dist-mobile",
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
-      "main": "main.ts",
+      "main": "main-mobile.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
+      "tsconfig": "tsconfig.app.mobile.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [
-        "styles.css"
-      ],
+      "styles": ["style/styles.scss"],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "desktop",
+      "root": "src",
+      "outDir": "dist-desktop",
+      "assets": ["assets", "favicon.ico"],
+      "index": "index.html",
+      "main": "main-desktop.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app.desktop.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": ["style/styles.scss"],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {

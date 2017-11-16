@@ -1,0 +1,13 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber';
+
+:host {
+  .nav {
+    position: fixed;
+    z-index: 1;
+  }
+
+  .content {
+    margin-top: 56px;
+    padding: 20px;
+  }
+}

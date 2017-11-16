@@ -1,0 +1,29 @@
+<mat-card class="container">
+  <mat-card-content>
+    <form>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Departure" aria-label="Departure" [matAutocomplete]="auto" [formControl]="departureCtrl">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onDepartureSelected($event)">
+          <mat-option *ngFor="let location of (filteredDepartureList$ | async)" [value]="location">
+            {{location}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" *ngIf="arrivalsList || true">
+        <input matInput placeholder="Arrival" aria-label="Arrival" [matAutocomplete]="auto" [formControl]="arrivalCtrl">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onArrivalSelected($event)">
+          <mat-option  *ngFor="let location of (filteredArrivalList$ | async)" [value]="location">
+            {{location}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-radio-group (change)="changeTripType($event)" [formControl]="tripCtrl">
+        <mat-radio-button [checked]="TRIP_TYPE.CHEAP === (checked$ | async)" [value]="TRIP_TYPE.CHEAP">CHEAP</mat-radio-button>
+        <mat-radio-button [checked]="TRIP_TYPE.FAST === (checked$ | async)" [value]="TRIP_TYPE.FAST">FAST</mat-radio-button>
+      </mat-radio-group>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="search()">SEARCH</button>
+  </mat-card-actions>
+</mat-card>
