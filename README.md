@@ -30,15 +30,15 @@ Results are deeplinked, means you copy and share the results with others.
 
 `yarn analyze:dektop`
 
-## Coding Standards
+## Coding Standards & Techniques
 Reposity is set up with:
 - `commitizen` for standard command messages 
 - `tslint` for standard command messages 
--  centralized rxjs imports
-- error warning for unsed imports that would increase biundle size
+- centralized rxjs imports
+- Error warning for unsed imports that would increase biundle size
 - ngRx as state managments
-- side effects has to pass from effects classes
-
+- Side effects have to pass from effects classes
+- Routes lazy loaded
 
 ## TODO
 - UTs
