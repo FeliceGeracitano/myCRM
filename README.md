@@ -10,7 +10,7 @@ This will enable more flexibility and performance improvenemt on the long run, e
 The app 'fetch' all the deals from the server all in once then build 2 weighted graph based on price(discounted) and time(minutes).
 
 The 2 graphs are available in the store and consumed everytime  user perfom a search.
-Complexity is equals to O(|E| + |V| Log|V|) where E are the edges and V the nodes.
+Complexity for shortest path is equals to O(|E| + |V| Log|V|) in worst case where E are the edges and V the nodes.
 
 
 Results are deeplinked, means you copy and share the results with others. 
